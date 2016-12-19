@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var globals = typeof window === 'undefined' ? global : window;
+  var globals = typeof window === 'undefined' ? (typeof self === 'undefined' ? global : self) : window;
   if (typeof globals.require === 'function') return;
 
   var modules = {};
